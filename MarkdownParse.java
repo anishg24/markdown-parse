@@ -30,7 +30,8 @@ public class MarkdownParse {
             else if (currentIndex < closeParen) {
                 currentIndex = closeParen + 1;
             }
-            toReturn.add(markdown.substring(openParen + 2, closeParen));
+            String substring = markdown.substring(openParen + 2, closeParen);
+            if (!substring.contains(" ")) toReturn.add(markdown.substring(openParen + 2, closeParen));
         }
         return toReturn;
     }
