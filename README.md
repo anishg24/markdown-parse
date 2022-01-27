@@ -7,4 +7,4 @@ My Java code can be found at [`src/main/java/MarkdownParse.java`](https://github
 
 My testers can be found at [`src/test/java/MarkdownParseTest.java`](https://github.com/anishg24/markdown-parse/blob/main/src/test/java/MarkdownParseTest.java)
 
-The test `.md` files can be found at [`src/test/resources`](https://github.com/anishg24/markdown-parse/tree/main/src/test/resources)
+The test `.md` files can be found at [`src/test/resources/markdown`](https://github.com/anishg24/markdown-parse/tree/main/src/test/resources/markdown)
