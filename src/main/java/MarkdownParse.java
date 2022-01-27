@@ -24,14 +24,18 @@ public class MarkdownParse {
         // the next )
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
-            int openParen = markdown.indexOf("](", currentIndex);
+            int openBracket = markdown.indexOf("[", currentIndex);
+            if (openBracket > 0 && markdown.charAt(openBracket - 1) == '!') break;
+
+            int openParen = markdown.indexOf("](", openBracket);
             int closeParen = markdown.indexOf(")", openParen);
             if (currentIndex > closeParen) break;
-            else if (currentIndex < closeParen) {
-                currentIndex = closeParen + 1;
-            }
-            String substring = markdown.substring(openParen + 2, closeParen);
-            if (!substring.contains(" ")) toReturn.add(markdown.substring(openParen + 2, closeParen));
+            else if (currentIndex < closeParen) currentIndex = closeParen + 1;
+
+            if (openParen > 0){
+                String substring = markdown.substring(openParen + 2, closeParen);
+                if (!substring.contains(" ")) toReturn.add(markdown.substring(openParen + 2, closeParen));
+            } else break;
         }
         return toReturn;
     }
