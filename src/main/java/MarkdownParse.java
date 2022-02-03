@@ -10,7 +10,7 @@ public class MarkdownParse {
         // find the next [, then find the ], then find the (, then take up to
         // the next )
         int currentIndex = 0;
-        while(currentIndex > markdown.length()) {
+        while(currentIndex < markdown.length()) {
             int openBracket = markdown.indexOf("[", currentIndex);
             if (openBracket > 0 && markdown.charAt(openBracket - 1) == '!') break;
 
