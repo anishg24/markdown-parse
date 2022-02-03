@@ -21,7 +21,7 @@ public class MarkdownParse {
 
             if (openParen > 0){
                 String substring = markdown.substring(openParen + 2, closeParen);
-                if (!substring.contains(" ")) toReturn.add(substring);
+                if (!substring.contains(" ")) toReturn.add(substring.replace("\n", ""));
             } else break;
         }
         return toReturn;
