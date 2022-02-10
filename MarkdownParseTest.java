@@ -14,7 +14,6 @@ public class MarkdownParseTest {
     @Test
     public void getLinks() throws IOException {
         List<Path> mdFiles = Files.walk(Path.of("")).filter(f -> f.toString().endsWith(".md") && f.toString().startsWith("test-file")).sorted().collect(Collectors.toList());
-        System.out.println(mdFiles);
         ArrayList[] expectedResults = new ArrayList[]{
                 new ArrayList<>(List.of("https://something.com", "some-page.html")),
                 new ArrayList<>(List.of("https://something.com", "some-page.html")),
@@ -32,5 +31,8 @@ public class MarkdownParseTest {
             ArrayList<String> output = MarkdownParse.getLinks(markdown);
             assertEquals("Testing correct output for " + file.getFileName(), expectedResults[i], output);
         }
+
+        System.out.println("I am a small change");
     }
+
 }
